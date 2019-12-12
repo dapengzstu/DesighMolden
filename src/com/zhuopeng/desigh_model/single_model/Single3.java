@@ -1,5 +1,7 @@
 package com.zhuopeng.desigh_model.single_model;
 
+import java.io.Serializable;
+
 /*
  *   一个懒汉，双重检查模式，推荐
  *   这个例子，对第一个错误的事例进行了改进。如果不使用双重检查模式，每次调用getInstance（）都直接进入同步代码块的话，性能不好
@@ -12,13 +14,13 @@ package com.zhuopeng.desigh_model.single_model;
  *   如果 2 和 3进行 了重排序， 1-3-2的顺序，如果线程A执行了3，这个时候线程B判断if（instance == null）结果为False，直接返回instance，
  *   就会返回一个没后初始化的instance
  * */
-public class Single3 {
+public class Single3 implements Serializable {
     private Single3() {
     }
 
     private static volatile Single3 instance;
 
-    public Single3 getInstance() {
+    public static Single3 getInstance() {
         if (instance == null) {
             synchronized (Single3.class) {
                 if (instance == null) {

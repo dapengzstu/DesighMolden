@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 *   除了枚举构造的单例模式，其他方法构造的单例模式都可以通过反射来进行破解
 *
 * */
-public class Main {
+public class Test1 {
     public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         //破解使用静态变量构造的单例模式
         Constructor cos = Single2.class.getDeclaredConstructor();
@@ -28,6 +28,8 @@ public class Main {
         //抛出异常，因为Single6的内部静态类已经new出一个实例了
         Single6 s6 = (Single6)constructor.newInstance();
         System.out.println("s6"+ s6);
+
+
 
     }
 }

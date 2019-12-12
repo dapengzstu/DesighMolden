@@ -1,19 +1,31 @@
 package com.zhuopeng.desigh_model.single_model;
 
 
-public class Single5{
-    private Single5(){}
-    public Single5 getInstance(){
-        return S.INSTANCE.getInstance();
+import java.io.Serializable;
+
+public enum  Single5 implements Serializable {
+    INSTANCE;
+    int id;
+    String name;
+
+    public void setId(int id) {
+        this.id = id;
     }
-    private enum S{
-        INSTANCE;
-        private Single5 instance;
-        private S(){
-            instance = new Single5();
-        }
-        private Single5 getInstance(){
-            return instance;
-        }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return name +","+id;
     }
 }
