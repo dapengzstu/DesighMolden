@@ -1,0 +1,22 @@
+
+public class IntegerDemo
+{
+
+    public static void main(String[] args)
+    {
+        Integer a1 = 127;
+        Integer a2 = 127;
+
+        System.out.println(a1 == a2);
+
+        Integer a3 = 129;
+        Integer a4 = 129;
+
+        System.out.println(a3 == a4);
+    }
+}
+结果输出 true，false
+作者：晓风轻
+链接：https://zhuanlan.zhihu.com/p/21571562
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
